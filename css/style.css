@@ -35,14 +35,18 @@
 }
 
 .new-taskbox {
-    display: flex;
-    justify-content: center;
     padding: 20px 0;
     border-bottom: 3px solid rgb(21, 20, 20);
 }
 
+.input-box {
+    display: flex;
+    justify-content: center;
+}
+
 .new-taskbox input {
     height: 40px;
+    font-size: 15px;
     background: #ffffffdc;
     width: 300px;
     padding: 0 20px;
@@ -52,6 +56,7 @@
 
 .new-taskbox button {
     padding: 0 20px;
+    font-size: 15px;
     cursor: pointer;
     border-radius: 10px;
     background: #0e3b84;
@@ -72,6 +77,21 @@
 }
 
 .task:hover {
-    background: #c2d6e8;
+    background: #9db7d2;
     cursor: pointer;
+}
+
+.error {
+    display: block;
+    margin-left: 160px;
+}
+
+.errore {
+    color: rgb(212, 0, 0);
+    font-size: 14px;
+}
+
+.done {
+    text-decoration: line-through;
+    color: green;
 }

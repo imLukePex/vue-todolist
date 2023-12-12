@@ -11,6 +11,7 @@
     <title>Esercizio 35 - ToDoList VueJS</title>
 </head>
 <body>
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
 
     <div id="app">
         <!-- Parte di intestazione -->
@@ -23,26 +24,31 @@
         <!-- Parte di gestione task input -->
         <div class="main-container">
             <div class="new-taskbox">
-                <input type="text" placeholder="Inserisci nuova task">
-                <button>Aggiungi</button>
+                <div class="input-box">
+                    <input type="text" placeholder="Inserisci nuova task" v-model="inputTask.text" @keyup.enter="addTask">
+                    <button @click="addTask">Aggiungi</button>
+                </div>
+                <!-- Gestione errore -->
+                <div class="error" v-if="error">
+                    <small class="errore">
+                        Devi inserire una task di almeno 5 caratteri
+                    </small>
+                </div>
             </div>
     
             <!-- Output tasks -->
             <div class="tasks-container">
-                <ul>
-                    <li class="task">Quarterly Newsletter <i class="fa-solid fa-xmark"></i></li>
-                    <li class="task">Recruiting blog post <i class="fa-solid fa-xmark"></i></li>
-                    <li class="task">Mobile app launch <i class="fa-solid fa-xmark"></i></li>
-                    <li class="task">Interview John H. <i class="fa-solid fa-xmark"></i></li>
-                    <li class="task">Summit update to mobile storefronts <i class="fa-solid fa-xmark"></i></li>
-                    <li class="task">Schedule meeting with Alex <i class="fa-solid fa-xmark"></i></li>
-                    <li class="task">Review editorial calendar <i class="fa-solid fa-xmark"></i></li>
+                <ul v-if="todos.length > 0">
+                    <li class="task" v-for="(title, i) in todos" :key="i" :class="title.done === true ? 'done': ''" @click="markedTask(i)">
+                        {{title.text}} 
+                        <i class="fa-solid fa-xmark" @click="delTask(i)"></i>
+                    </li>
                 </ul>
+                <h2 v-else>Non ci sono task 😎</h2>
             </div>
         </div>
     </div>
 
-    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -19,21 +19,60 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            inputTask: {
+                text: "",
+                done: false
+            },
+
+            error: false,
 
             todos: [{
-                text: 'Fare i compiti',
+                text: 'Homepage refresh',
                 done: false
             }, {
-                text: 'Fare la spesa',
+                text: 'Recruiting blog post',
                 done: true
             }, {
-                text: 'Fare il bucato',
+                text: 'Mobile app launch',
                 done: false
+            }, {
+                text: 'Interview John H.',
+                done: true
+            }, {
+                text: 'Summit update to mobile storefronts',
+                done: false
+            }, {
+                text: 'Schedule meeting with Alex',
+                done: false
+            }, {
+                text: 'Review editorial calendar',
+                done: true
             }],
         }
     },
     methods: {
+        addTask() {
+            if(this.inputTask.text.length < 5) {
+                this.error = true;
+            } else {
+                this.todos.unshift({text: this.inputTask.text});
+                this.inputTask = {text: ''};
+                this.error = false;
+            }
 
+        },
+
+        delTask(i) {
+            this.todos.splice(i, 1);
+        },
+
+        markedTask(i) {
+            if(this.todos[i].done === true) {
+                this.todos[i].done = false;
+            } else {
+                this.todos[i].done = true;
+            }
+        }
     },
     mounted() {
         console.log("L'applicazione è caricata!!");
