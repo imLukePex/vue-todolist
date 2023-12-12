@@ -13,7 +13,33 @@
 <body>
 
     <div id="app">
-        
+        <!-- Parte di intestazione -->
+        <div class="topbar">
+            <div class="boxlogo">
+                <img src="img/logo.svg" alt="logo Boolean">
+            </div>
+        </div>
+
+        <!-- Parte di gestione task input -->
+        <div class="main-container">
+            <div class="new-taskbox">
+                <input type="text" placeholder="Inserisci nuova task">
+                <button>Aggiungi</button>
+            </div>
+    
+            <!-- Output tasks -->
+            <div class="tasks-container">
+                <ul>
+                    <li class="task">Quarterly Newsletter <i class="fa-solid fa-xmark"></i></li>
+                    <li class="task">Recruiting blog post <i class="fa-solid fa-xmark"></i></li>
+                    <li class="task">Mobile app launch <i class="fa-solid fa-xmark"></i></li>
+                    <li class="task">Interview John H. <i class="fa-solid fa-xmark"></i></li>
+                    <li class="task">Summit update to mobile storefronts <i class="fa-solid fa-xmark"></i></li>
+                    <li class="task">Schedule meeting with Alex <i class="fa-solid fa-xmark"></i></li>
+                    <li class="task">Review editorial calendar <i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>

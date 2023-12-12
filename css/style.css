@@ -3,12 +3,75 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 
 :root {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    color-scheme: dark;
+    background: rgb(21, 20, 20);
 }
 
 /* Stili Main */
+.topbar {
+    width: 100%;
+    height: 80px;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxlogo img {
+    width: 100%;
+}
+
+.main-container {
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #8dc2ffdc;
+    margin-top: 60px;
+}
+
+.new-taskbox {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 3px solid rgb(21, 20, 20);
+}
+
+.new-taskbox input {
+    height: 40px;
+    background: #ffffffdc;
+    width: 300px;
+    padding: 0 20px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.new-taskbox button {
+    padding: 0 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #0e3b84;
+    color: #ffff;
+}
+
+.tasks-container {
+    padding: 30px;
+}
+
+.task {
+    font-size: 16px;
+    padding: 8px;
+    border-bottom: 2px solid #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task:hover {
+    background: #c2d6e8;
+    cursor: pointer;
+}
