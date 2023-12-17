@@ -82,8 +82,8 @@
 }
 
 .error {
-    display: block;
-    margin-left: 160px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .errore {
